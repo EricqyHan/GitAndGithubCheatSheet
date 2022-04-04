@@ -51,6 +51,31 @@ git log --oneline
 
 ### Amending Commits
 
-- Supposed you just made acommit and then realized you forgot to include a file. Or, maybe you made a type int he message that you wanted to correct.
+- Supposed you just made a commit and then realized you forgot to include a file. Or, maybe you made a type int he message that you wanted to correct.
 - Rather than making a brand new separate commit, you can just "redo" the previous commit using the --amend option
 - Only works for the previous commit
+
+![Git Forgot to add a file to commit](Images/GitCommitForgotAddFileAmmend.png)
+
+- Here we see we made edits to to MyFirstNovel/Chapter-01.md, MyFirstNovel/Chapter-02.md, MyFirstNovel/characters.md, and MyFirstNovel/outline.md.
+
+- We committed everything but MyFirstNovel/outline.md
+- Git commit --ammend will help save the day
+- ![Git Ammend](Images/GitAmmendUpdatedFourFiles.png)
+- Remember: This only works for the previous commit.
+- A VIM window will open after you "git add "new file" and git commit -- ammend" and you will be able to make edits to your commit message.
+- ![Git Commit Ammend](Images/GitCommitAmmend.png)
+- Close the window when you are ready to commit
+
+### Ignoring Files
+
+- Good for API keys, credentials, operating system files, log files, dependencies and packages
+
+- use a file named .gitignore
+- .DS_Store will ignore files named .DS_Store
+- folderName/ will ignore an entire directory
+- \*.log will ignore any files with the .log extension
+
+![Git Ignore](Images/GitIgnore.png)
+
+- secrets.md will not be added

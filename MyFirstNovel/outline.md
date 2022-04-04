@@ -1,5 +1,9 @@
 # The Great Gatsby
 
+===============
+Outline
+===============
+
 Chapter 1
 
 - We meet Nick, Tom, Daisy, and jordan

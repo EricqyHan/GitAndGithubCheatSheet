@@ -20,6 +20,7 @@ git log - retrieves logs of the commits
 When possible, a commit should encompass a single feature, change, or fix. In other words, try to keep each commit focused on a single thing. This makes it much easier to undo or rollback changes later on. It also makes your code or project easier to review.
 
 - keep each commit focused on "ONE" feature
+- Make sure to keep the first line the summary if you have a multiline commit message. This will help with commit history.
 
 ### Present Tense or Past Tense?
 
@@ -31,7 +32,25 @@ When possible, a commit should encompass a single feature, change, or fix. In ot
 - We do this when we are on a big project and want to type in a large commit message.
 - Use VS code as an editor instead.
 - Use code snippet below to change VS Code to default VIM editor
+- Note to make sure you have installed "code" command in VS code or the above snippet might not work.
 
 ```
 git config --global core.editor "code --wait"
 ```
+
+Type out your commit message, save, and close out of the commit window and your commit will be pushed
+
+![Git Commit](Images/GitCommitVIM.png)
+
+### A Closer Look at Git Log Command
+
+![Git Log](Images/GitLog.png)
+
+git log --oneline
+![Git Log One Line](Images/GitLogOneLine.png)
+
+### Amending Commits
+
+- Supposed you just made acommit and then realized you forgot to include a file. Or, maybe you made a type int he message that you wanted to correct.
+- Rather than making a brand new separate commit, you can just "redo" the previous commit using the --amend option
+- Only works for the previous commit

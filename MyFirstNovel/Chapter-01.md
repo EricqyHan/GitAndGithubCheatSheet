@@ -1,8 +1,8 @@
 # Chapter 1
 
-=======
+===============
 Chapter 1
-=======
+===============
 
 In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
 

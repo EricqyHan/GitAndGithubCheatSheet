@@ -1,6 +1,6 @@
-===========
+===============
 Characters
-===========
+===============
 
 Jay Gatsby - a young, mysterious millionaire with shady business connections (later revealed to be a bootlegger), originally from North Dakota. During World War I, when he was a young military officer stationed at the United States Army's Camp Taylor in Louisville, Kentucky, Gatsby encountered the love of his life, the debutante Daisy Buchanan. Later, after the war, he studied briefly at Trinity College, Oxford, in England. According to Fitzgerald's wife Zelda, he partly based Gatsby on their enigmatic Long Island neighbor, Max Gerlach. A military veteran, Gerlach became a self-made millionaire due to his bootlegging endeavors and was fond of using the phrase "old sport" in his letters to Fitzgerald.
 

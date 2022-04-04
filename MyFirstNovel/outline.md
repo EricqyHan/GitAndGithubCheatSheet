@@ -9,3 +9,5 @@ Chapter 1
 - Tom and Daisy hint to Nick that he should date Jordan
 - Nick goes home and seeds Gatsby for hte first time
 - Something cool happened
+
+Chapter 2 starts here

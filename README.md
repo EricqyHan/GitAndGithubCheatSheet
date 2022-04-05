@@ -1,10 +1,19 @@
 # GitAndGithubCheatSheet
 
+## Git Intro Table on Contents
+
+| Description                  | Command                 |
+| ---------------------------- | ----------------------- |
+| _First Step_                 |
+| Create a new git repository. | `git init`              |
+| Create a new git repository. | [`git init`](#git-init) |
+|  |
+
 ## Section 4: Basics of git: Adding and Committing
 
 git status - gives information on current status of a git repository and it's contents
 
-git init - creates a new git repository. Before we can do anything git-related, we must initialize a git repo first! Done once per poject.
+#### git init - creates a new git repository. Before we can do anything git-related, we must initialize a git repo first! Done once per poject.
 
 git commit - are "checkpoints" - command to actually commit changes from the staging area
 <br>
@@ -80,7 +89,7 @@ git log --oneline
 
 - secrets.md will not be added
 
-## 6: Working With Branches
+## Section 6: Working With Branches
 
 - Master was named Main back in 2020 and it is the default branch name. There is nothing special about it.
 - Think of branches as bookmarks in a book and only one can be opened.
@@ -88,7 +97,7 @@ git log --oneline
 
 ### Viewing Branches
 
-`git branch` to view you existing branches. The defualt default branch in every git repo is main, thought you can configure this.
+`git branch` to view you existing branches or `git branch -v` to see a little more info. The defualt default branch in every git repo is main, thought you can configure this.
 
 - type `q` to get out of branch
 
@@ -134,3 +143,71 @@ Note that you will get an error if you try to switch to a different branch befor
 Use `git branch -D` to delete branches
 
 Use `git branch -m <new name>` - while you are in the branch you want to rename
+
+## Section 7: Merging Branches
+
+Merging - Branching makes it super easy to work within self-contained contexts, but often we want to incorporate changes from one branch to another.
+
+- We can do this with the `git merge` command
+
+Remember these two meging concepts:
+
+- we merge branches, not specific commits
+- we always merge to the current HEAD branch
+
+### Fast Forward Merge
+
+- Remember that when we are doing a fast forward merge we are just having 'main branch' catch up on thse commits that we added to our current branch
+- We are just fast forwarding "Master two branches ahead"
+  ![Fast Forward Merge](Images/7-MergingBranches/FastForwardMerge.png)
+- Remember to switch into the destination branch that we are merging into
+- Switch into master with `git switch master` assuming we are merging into master.
+
+### Merging Branches
+
+Switch to branch you want everything merged into and type `git merge <branch name>`
+
+### Generating Merge Commits
+
+Note that not all merges are fast forward merges
+
+### Merge Conflicts
+
+- Depending on the specific changes you are trying to merge, git may not be able to automatically merge. This results in merge conflicts, which you need to manually resolve.
+  ![Merge Conflicts](Images/7-MergingBranches/GitMergeConflicts.png)
+
+  Dealing With Merge Conflicts
+
+  ![Git Kraken](Images/7-MergingBranches/GitKrakenMerges.png)
+  Here we can see we made two different commits from two different branches.
+
+  ```
+  /// Playlist for Serena
+  SOS - Abba
+  One of Us - Abba
+  Mamma Mia - Abba
+  Dancing Queen - Abba
+  Gimme Gimme - Abba
+  Here You Come Again - Dolly Parton
+
+  ```
+
+  And
+
+```
+/// Playlist for Bjorn
+Dancing Queen - Abba
+Taylor Swift - You Belong With Me
+Power Rangers Time Force Theme
+Power Rangers Lost In Space Theme
+```
+
+Where do we do the merges?
+
+- We do a combo merge
+- open a new branch on the current branch you are in
+  ![Git Merge](Images/7-MergingBranches/GitMergeCombo.png)
+- SInce we are on the bjorn branch, we can create a new branch called "combo" and merge <other branch> into the combo branch
+
+![Git Merge Conflict](Images/7-MergingBranchs/../7-MergingBranches/GitMergeConflictsSolution.png)
+This is what where we can accept what changes that are coming in.

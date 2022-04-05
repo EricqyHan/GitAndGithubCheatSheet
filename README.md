@@ -8,7 +8,7 @@
 | Create a new git repository. | `git init`                                 |
 | Create a new git repository. | [`git init`](#git-init)                    |
 | Ammending Commits            |
-| Create a new git repository. | [`git commit --ammend`](#Amending Commits) |
+| Create a new git repository. | [`git commit --ammend`](#Amending-Commits) |
 
 ## Section 4: Basics of git: Adding and Committing
 

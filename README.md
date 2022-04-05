@@ -2,12 +2,13 @@
 
 ## Git Intro Table on Contents
 
-| Description                  | Command                 |
-| ---------------------------- | ----------------------- |
+| Description                  | Command                                    |
+| ---------------------------- | ------------------------------------------ |
 | _First Step_                 |
-| Create a new git repository. | `git init`              |
-| Create a new git repository. | [`git init`](#git-init) |
-|  |
+| Create a new git repository. | `git init`                                 |
+| Create a new git repository. | [`git init`](#git-init)                    |
+| Ammending Commits            |
+| Create a new git repository. | [`git commit --ammend`](#Amending Commits) |
 
 ## Section 4: Basics of git: Adding and Committing
 
@@ -69,7 +70,7 @@ git log --oneline
 - Here we see we made edits to to MyFirstNovel/Chapter-01.md, MyFirstNovel/Chapter-02.md, MyFirstNovel/characters.md, and MyFirstNovel/outline.md.
 
 - We committed everything but MyFirstNovel/outline.md
-- Git commit --ammend will help save the day
+- `git commit --ammend` will help save the day
 - ![Git Ammend](Images/5-CommitsInDetail/GitAmmendUpdatedFourFiles.png)
 - Remember: This only works for the previous commit.
 - A VIM window will open after you "git add "new file" and git commit -- ammend" and you will be able to make edits to your commit message.

@@ -2,12 +2,14 @@
 
 ## Git Intro Table on Contents
 
-| Description                  | Command                                    |
-| ---------------------------- | ------------------------------------------ |
+| Description                  | Command                 |
+| ---------------------------- | ----------------------- |
 | _First Step_                 |
-| Create a new git repository. | `git init`                                 |
-| Create a new git repository. | [`git init`](#git-init)                    |
-| Ammending Commits            |
+| Create a new git repository. | `git init`              |
+| Create a new git repository. | [`git init`](#git-init) |
+| Git Add and Commit one line  | [`git commit -am `]     |
+
+| Ammending Commits |
 | Create a new git repository. | [`git commit --ammend`](#Amending-Commits) |
 
 ## Section 4: Basics of git: Adding and Committing
@@ -59,7 +61,7 @@ Type out your commit message, save, and close out of the commit window and your 
 git log --oneline
 ![Git Log One Line](Images/5-CommitsInDetail/GitLogOneLine.png)
 
-### Amending Commits
+### Amending Commits with `git commit --ammend`
 
 - Supposed you just made a commit and then realized you forgot to include a file. Or, maybe you made a type int he message that you wanted to correct.
 - Rather than making a brand new separate commit, you can just "redo" the previous commit using the --amend option
@@ -212,3 +214,52 @@ Where do we do the merges?
 
 ![Git Merge Conflict](Images/7-MergingBranchs/../7-MergingBranches/GitMergeConflictsSolution.png)
 This is what where we can accept what changes that are coming in.
+
+## Git Diff
+
+- We can use the `git diff` command to view changes between commits, branches, files, our working directory, and more!
+- WE often use git diff alongside commands like git status and git log, to get a better picture of a repository and how it has changed overtime.
+- Purly an informative command as it does not do anything to the repo
+
+Reasons to use Git Diff
+![Git Diff](Images/8-GitDiff/GitDiffEx1.png)
+You see in the above example we added
+
+```
+Possible Adds
+Beastie Boys - Sabotage
+```
+
+Let's say we had more files and documents that we worked on and don't remember what was done.
+
+- We can use `git diff` to see what was changed
+
+![Git Diff Terminal](Images/8-GitDiff/GitDiffResults.png)
+
+### Reading Guide to Git Diff
+
+Note from picture above. You will see two files being compared. One will be labeled as a/songs.md and b/songs.md
+
+The index line if about `File Metadata` and you really don't need to worry about this part. The First two numbers are the hashes of the two files being compared. The last number is an internal file mode identifier.
+
+The `Markers` are assigned each a symbol. File A gets a (-) sign while file b gets a (+) sign.
+
+Chunks - a diff won't show you the entire contents of a file, but instead only shows portins or "chunks" that were modified. A chunk also includes lines before and after a change to provide some context.
+
+Git Diff - Without additional options, git diff lists all changes in our working directory that are not staged for next commit.
+![Git Diff Comparison](Images/8-GitDiff/GitDiffComparison.png)
+
+- We see purple had been taken out and indigo has been added
+- Note that + does not always mean something new. It just means that it came from file b.
+
+`git diff head` - Includes staged and unstaged changes since last commit
+
+`git diff` shows all unstaged changes while `git diff --staged" shows all staged changes.
+
+`git diff branch1..branch2` - git diff branch1..branch2 will list the changes between the tips of branch1 and branch2
+
+`git diff commit1..commit2` - compares two commits, provide git diff with the commit hashes of the commits in question
+
+- use `git log` to easier pull hashes and put the seven digit hash from git log.
+  ![Git Log Hash](Images/8-GitDiff/GitLogHash.png)
+- if we wanted to compare differences between "add red commit" and "add blue and purple" we would use `git diff 56129d6..56129d6`

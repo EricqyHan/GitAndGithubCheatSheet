@@ -2,21 +2,21 @@
 
 ## Git Intro Table on Contents
 
-| Description                  | Command                 |
-| ---------------------------- | ----------------------- |
+| Description                  | Command                                    |
+| ---------------------------- | ------------------------------------------ |
 | _First Step_                 |
-| Create a new git repository. | `git init`              |
-| Create a new git repository. | [`git init`](#git-init) |
-| Git Add and Commit one line  | [`git commit -am `]     |
-
-| Ammending Commits |
+| Create a new git repository. | [`git init`](#git-init)                    |
+| Create Status                | [`git status`](#git-init)                  |
+| Ammending Commits            |
 | Create a new git repository. | [`git commit --ammend`](#Amending-Commits) |
 
 ## Section 4: Basics of git: Adding and Committing
 
-git status - gives information on current status of a git repository and it's contents
+`git status` - gives information on current status of a git repository and it's contents
 
-#### git init - creates a new git repository. Before we can do anything git-related, we must initialize a git repo first! Done once per poject.
+#### git init
+
+`git init` - creates a new git repository. Before we can do anything git-related, we must initialize a git repo first! Done once per poject.
 
 git commit - are "checkpoints" - command to actually commit changes from the staging area
 <br>

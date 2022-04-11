@@ -23,7 +23,7 @@ git commit - are "checkpoints" - command to actually commit changes from the sta
 If you get stuck in VIM editor because you typed in "git commit" then to exit it will be ":q"
 
 git log - retrieves logs of the commits
-![Git Log](Images/4-WorkingWithBranches/GitLog.png)
+![Git Log](Images/04-WorkingWithBranches/GitLog.png)
 
 ## Section 5: Commits in Detail
 
@@ -52,14 +52,14 @@ git config --global core.editor "code --wait"
 
 Type out your commit message, save, and close out of the commit window and your commit will be pushed
 
-![Git Commit](Images/5-CommitsInDetail/GitCommitVIM.png)
+![Git Commit](Images/05-CommitsInDetail/GitCommitVIM.png)
 
 ### A Closer Look at Git Log Command
 
-![Git Log](Images/5-CommitsInDetail/GitLog.png)
+![Git Log](Images/05-CommitsInDetail/GitLog.png)
 
 git log --oneline
-![Git Log One Line](Images/5-CommitsInDetail/GitLogOneLine.png)
+![Git Log One Line](Images/05-CommitsInDetail/GitLogOneLine.png)
 
 ### Amending Commits with `git commit --ammend`
 
@@ -67,16 +67,16 @@ git log --oneline
 - Rather than making a brand new separate commit, you can just "redo" the previous commit using the --amend option
 - Only works for the previous commit
 
-![Git Forgot to add a file to commit](Images/5-CommitsInDetail/GitCommitForgotAddFileAmmend.png)
+![Git Forgot to add a file to commit](Images/05-CommitsInDetail/GitCommitForgotAddFileAmmend.png)
 
 - Here we see we made edits to to MyFirstNovel/Chapter-01.md, MyFirstNovel/Chapter-02.md, MyFirstNovel/characters.md, and MyFirstNovel/outline.md.
 
 - We committed everything but MyFirstNovel/outline.md
 - `git commit --ammend` will help save the day
-- ![Git Ammend](Images/5-CommitsInDetail/GitAmmendUpdatedFourFiles.png)
+- ![Git Ammend](Images/05-CommitsInDetail/GitAmmendUpdatedFourFiles.png)
 - Remember: This only works for the previous commit.
 - A VIM window will open after you "git add "new file" and git commit -- ammend" and you will be able to make edits to your commit message.
-- ![Git Commit Ammend](Images/5-CommitsInDetail/GitCommitAmmend.png)
+- ![Git Commit Ammend](Images/05-CommitsInDetail/GitCommitAmmend.png)
 - Close the window when you are ready to commit
 
 ### Ignoring Files
@@ -88,7 +88,7 @@ git log --oneline
 - folderName/ will ignore an entire directory
 - \*.log will ignore any files with the .log extension
 
-![Git Ignore](Images/5-CommitsInDetail/GitIgnore.png)
+![Git Ignore](Images/05-CommitsInDetail/GitIgnore.png)
 
 - secrets.md will not be added
 
@@ -109,7 +109,7 @@ git log --oneline
 `git branch <bugfix>` - enter new name of branch between <>
 `git branch` - to see branches available
 
-![Git Branch](Images/6-WorkingWithBranches/GitBranch1.png)
+![Git Branch](Images/06-WorkingWithBranches/GitBranch1.png)
 
 ### Switching between branches
 
@@ -118,13 +118,13 @@ git log --oneline
 `git commit -a -m "commit message"` - is a shortcut way to add and commit all unstaged changes
 
 - Note that where you branch from matters.
-  ![Git Switch Main](Images/6-WorkingWithBranches/GitSwitchMain.png)
+  ![Git Switch Main](Images/06-WorkingWithBranches/GitSwitchMain.png)
 
 - Switching to Oldies branch
-- ![Git Switch Oldies](Images/6-WorkingWithBranches/GitSwitchOldies.png)
+- ![Git Switch Oldies](Images/06-WorkingWithBranches/GitSwitchOldies.png)
 
 - Switching to Georges branch
-- - ![Git Switch Georges](Images/6-WorkingWithBranches/GitSwitchesGeorges.png)
+- - ![Git Switch Georges](Images/06-WorkingWithBranches/GitSwitchesGeorges.png)
 
 ### Switching with Git Checkout
 
@@ -133,7 +133,7 @@ Git checkout commands does a million additional things, so decision was made to 
 OR
 
 We can also use `git switch -c <branch name>` as a shortcut for creating and switching to a new branch
-![Git Switch -c](Images/6-WorkingWithBranches/GitSwitch-C.png)
+![Git Switch -c](Images/06-WorkingWithBranches/GitSwitch-C.png)
 
 ### Switching with unstaged changes
 
@@ -162,7 +162,7 @@ Remember these two meging concepts:
 
 - Remember that when we are doing a fast forward merge we are just having 'main branch' catch up on thse commits that we added to our current branch
 - We are just fast forwarding "Master two branches ahead"
-  ![Fast Forward Merge](Images/7-MergingBranches/FastForwardMerge.png)
+  ![Fast Forward Merge](Images/07-MergingBranches/FastForwardMerge.png)
 - Remember to switch into the destination branch that we are merging into
 - Switch into master with `git switch master` assuming we are merging into master.
 
@@ -177,11 +177,11 @@ Note that not all merges are fast forward merges
 ### Merge Conflicts
 
 - Depending on the specific changes you are trying to merge, git may not be able to automatically merge. This results in merge conflicts, which you need to manually resolve.
-  ![Merge Conflicts](Images/7-MergingBranches/GitMergeConflicts.png)
+  ![Merge Conflicts](Images/07-MergingBranches/GitMergeConflicts.png)
 
   Dealing With Merge Conflicts
 
-  ![Git Kraken](Images/7-MergingBranches/GitKrakenMerges.png)
+  ![Git Kraken](Images/07-MergingBranches/GitKrakenMerges.png)
   Here we can see we made two different commits from two different branches.
 
   ```
@@ -209,10 +209,10 @@ Where do we do the merges?
 
 - We do a combo merge
 - open a new branch on the current branch you are in
-  ![Git Merge](Images/7-MergingBranches/GitMergeCombo.png)
-- SInce we are on the bjorn branch, we can create a new branch called "combo" and merge <other branch> into the combo branch
+  ![Git Merge](Images/07-MergingBranches/GitMergeCombo.png)
+- Since we are on the bjorn branch, we can create a new branch called "combo" and merge <other branch> into the combo branch
 
-![Git Merge Conflict](Images/7-MergingBranchs/../7-MergingBranches/GitMergeConflictsSolution.png)
+![Git Merge Conflicts](Images/07-MergingBranches/GitMergeConflictsSolution.png)
 This is what where we can accept what changes that are coming in.
 
 ## Section 8: Git Diff
@@ -222,7 +222,7 @@ This is what where we can accept what changes that are coming in.
 - Purly an informative command as it does not do anything to the repo
 
 Reasons to use Git Diff
-![Git Diff](Images/8-GitDiff/GitDiffEx1.png)
+![Git Diff](Images/08-GitDiff/GitDiffEx1.png)
 You see in the above example we added
 
 ```
@@ -234,7 +234,7 @@ Let's say we had more files and documents that we worked on and don't remember w
 
 - We can use `git diff` to see what was changed
 
-![Git Diff Terminal](Images/8-GitDiff/GitDiffResults.png)
+![Git Diff Terminal](Images/08-GitDiff/GitDiffResults.png)
 
 ### Reading Guide to Git Diff
 
@@ -247,7 +247,7 @@ The `Markers` are assigned each a symbol. File A gets a (-) sign while file b ge
 Chunks - a diff won't show you the entire contents of a file, but instead only shows portins or "chunks" that were modified. A chunk also includes lines before and after a change to provide some context.
 
 Git Diff - Without additional options, git diff lists all changes in our working directory that are not staged for next commit.
-![Git Diff Comparison](Images/8-GitDiff/GitDiffComparison.png)
+![Git Diff Comparison](Images/08-GitDiff/GitDiffComparison.png)
 
 - We see purple had been taken out and indigo has been added
 - Note that + does not always mean something new. It just means that it came from file b.
@@ -261,7 +261,7 @@ Git Diff - Without additional options, git diff lists all changes in our working
 `git diff commit1..commit2` - compares two commits, provide git diff with the commit hashes of the commits in question
 
 - use `git log` to easier pull hashes and put the seven digit hash from git log.
-  ![Git Log Hash](Images/8-GitDiff/GitLogHash.png)
+  ![Git Log Hash](Images/08-GitDiff/GitLogHash.png)
 - if we wanted to compare differences between "add red commit" and "add blue and purple" we would use `git diff 56129d6..56129d6`
 
 ## Section 9: Git Stash
@@ -291,7 +291,7 @@ Using git stash because you made changes but are not ready to commit them yet.
 ### Working with multiple stashes
 
 `git stash list`
-~[Git Stash List](Images/09-GitStash/GitStashList.png)
+![Git Stash List](Images/09-GitStash/GitStashList.png)
 
 - We can reference particular stashes with the stash@{number} `git stash apply stash@{2}`
 

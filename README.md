@@ -301,3 +301,4 @@ Using git stash because you made changes but are not ready to commit them yet.
 
 - note that only git stash pop will clear out that stash
 - if we want to completely empty out the stash we can use `git stash clear`
+  g

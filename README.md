@@ -215,7 +215,7 @@ Where do we do the merges?
 ![Git Merge Conflict](Images/7-MergingBranchs/../7-MergingBranches/GitMergeConflictsSolution.png)
 This is what where we can accept what changes that are coming in.
 
-## Git Diff
+## Section 8: Git Diff
 
 - We can use the `git diff` command to view changes between commits, branches, files, our working directory, and more!
 - WE often use git diff alongside commands like git status and git log, to get a better picture of a repository and how it has changed overtime.
@@ -263,3 +263,41 @@ Git Diff - Without additional options, git diff lists all changes in our working
 - use `git log` to easier pull hashes and put the seven digit hash from git log.
   ![Git Log Hash](Images/8-GitDiff/GitLogHash.png)
 - if we wanted to compare differences between "add red commit" and "add blue and purple" we would use `git diff 56129d6..56129d6`
+
+## Section 9: Git Stash
+
+Stashing - git provides an easy way of stashing these uncommitted changes so that we can return to them later, without having to make unnecessary changes. We don't see these changes anymore but they are still there.
+
+`git stash pop` - to remove the most recently stashed changes in your stash and re-apply them to your working copy.
+
+Sometimes if you make changes in a new branch and switch out of it, your changes may come with you assuming they don't conflict. It would be a fast forward merge if you did merge.
+
+- note that if there are conflicts, git won't be happy.
+  ![Git Stash OverWritten](Images/09-GitStash/GitStashOverwritten.png)
+- This is where `git stash` comes in. If you are not ready to commit or don't want to commit just yet.
+- `git stash` will pause (to save your changes without commiting them)
+
+Using git stash because you made changes but are not ready to commit them yet.
+![Git Stash](Images/09-GitStash/GitStash.png)
+
+- type `git status` and you will see a clean working tree.
+- you can now switch branches without conflicts
+- when you are ready, you can go to whatever branch you wanted to add your changes to and use `git stash pop` to apply them
+
+### Git Stash apply
+
+`git stash apply` - to apply whatever is stashed away, without removing it from the stash. This can be useful if you want to apply stashed changes to multiple branches.
+
+### Working with multiple stashes
+
+`git stash list`
+~[Git Stash List](Images/09-GitStash/GitStashList.png)
+
+- We can reference particular stashes with the stash@{number} `git stash apply stash@{2}`
+
+### Drop Stashes
+
+`git stash drop stash@{number}` - to delete a particular stash
+
+- note that only git stash pop will clear out that stash
+- if we want to completely empty out the stash we can use `git stash clear`

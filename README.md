@@ -2,13 +2,25 @@
 
 ## Git Intro Table on Contents
 
-| Description                  | Command                                    |
-| ---------------------------- | ------------------------------------------ |
-| _First Step_                 |
-| Create a new git repository. | [`git init`](#git-init)                    |
-| Create Status                | [`git status`](#git-init)                  |
-| Ammending Commits            |
-| Create a new git repository. | [`git commit --ammend`](#Amending-Commits) |
+git commit -a -m "commit message"
+
+| Description                                            | Command                                         |
+| ------------------------------------------------------ | ----------------------------------------------- |
+| **First Step**                                         |
+| Create a new git repository.                           | [`git init`](#git-init)                         |
+| Create Status                                          | `git status`                                    |
+| **Git Commits**                                        |
+| Add and commit in same line                            | `git commit -a -m "commit message"`             |
+| Create a new git repository.                           | [`git commit --ammend`](#Amending-Commits)      |
+| **New Branches**                                       |
+| See what branches are available                        | [`git branch`](#Viewing-Branches)               |
+| See what branches are available with more info         | `git branch -v`                                 |
+| **Switch Branches**                                    |
+| Creating a Branch and switching to it                  | [`git switch -c`](#Switching-with-Git=Checkout) |
+| Switching to a branch                                  | `git Switch`                                    |
+| **Git Stashing**                                       |
+| Stashing uncommitted changes before switching branches | [`git stash`](#Section-9:-Git-Stash)            |
+| Apply most recently stashed change to current branch   | `git stash pop`                                 |
 
 ## Section 4: Basics of git: Adding and Committing
 
@@ -18,11 +30,11 @@
 
 `git init` - creates a new git repository. Before we can do anything git-related, we must initialize a git repo first! Done once per poject.
 
-git commit - are "checkpoints" - command to actually commit changes from the staging area
+`git commit` - are "checkpoints" - command to actually commit changes from the staging area
 <br>
 If you get stuck in VIM editor because you typed in "git commit" then to exit it will be ":q"
 
-git log - retrieves logs of the commits
+`git log` - retrieves logs of the commits
 ![Git Log](Images/04-WorkingWithBranches/GitLog.png)
 
 ## Section 5: Commits in Detail
@@ -40,7 +52,7 @@ When possible, a commit should encompass a single feature, change, or fix. In ot
 
 ### Escaping VIM
 
-- If typed in "git commit" by accident and asked to enter a commit message all you have to do it type "i" to enter a commit message or type ":wq" and hit enter.
+- If typed in "git commit" by accident and asked to enter a commit message all you have to do it type "i" to enter a commit message or type `:wq` and hit enter.
 - We do this when we are on a big project and want to type in a large commit message.
 - Use VS code as an editor instead.
 - Use code snippet below to change VS Code to default VIM editor
@@ -61,7 +73,9 @@ Type out your commit message, save, and close out of the commit window and your 
 git log --oneline
 ![Git Log One Line](Images/05-CommitsInDetail/GitLogOneLine.png)
 
-### Amending Commits with `git commit --ammend`
+### Amending Commits
+
+Ammending commits with `git commit --ammend`
 
 - Supposed you just made a commit and then realized you forgot to include a file. Or, maybe you made a type int he message that you wanted to correct.
 - Rather than making a brand new separate commit, you can just "redo" the previous commit using the --amend option
@@ -266,7 +280,8 @@ Git Diff - Without additional options, git diff lists all changes in our working
 
 ## Section 9: Git Stash
 
-Stashing - git provides an easy way of stashing these uncommitted changes so that we can return to them later, without having to make unnecessary changes. We don't see these changes anymore but they are still there.
+Stashing - Git provides an easy way of stashing these uncommitted changes so that we can return to them later, without having to make unnecessary commits
+`git stash`
 
 `git stash pop` - to remove the most recently stashed changes in your stash and re-apply them to your working copy.
 
